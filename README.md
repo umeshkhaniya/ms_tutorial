@@ -1,11 +1,9 @@
 # Microstate Analysis of Protein
-This is the tutorial for microstate analysis in the Monte Carlo Sampling. Main idea of this tool is novel way of understanding the charge states of protein molecules. During the MCCE pdb run,  millions of microstate are generated and goal here is to analyse microstates and find out the right protonation state for Molecular Dynamics simulation. In this tutorial, small system 4lzt at pH = 7 is taken for the tutorial propose.  
+This is the tutorial for microstate analysis in the Monte Carlo Sampling.  In this tutorial, lysozyme 4lzt at pH = 7 is used.  
 
 # Introduction:
 Proteins are dynamic objects and it is well established that they exist in a distribution of conformations.  Conformationaion distributions are required for function, but they are also inevitable given the low barriers to many of the motions proteins can undergo. Thus, a protein with N atoms has 3N-6 vibrational modes to generate the conformational flexibility.       
 Monte Carlo sampling in MCCE uses Metropolis–Hastings algorithm to evaluate the microstate probability distribution. A microstate step is achieved by a residue conformer flip, that is, the conformer of a randomly chosen residue is switched to another conformer of its residue. Multi-flip is performed at 50% chance if some conformers of the chosen residue have big interactions with conformers in other residues. This is to allow concerted motion/ionization to have a fair chance to be evaluated. The Monte Carlo sampling in MCCE goes through annealing stage, reduction stage, and sampling stage. The annealing stage is to gradually reduce the temperature in the Boltzmann distribution function to the room temperature. This will ensure the statistics of microstates are only collected at the equilibrium even though the first randomly selected microstate may be quite off the equilibrium.   The reduction stage is to sample the microstates for a fair number of steps. The conformers that are never appeared in reduction stage are excluded from later sampling. After reduction, residues that have choice of conformers are “free” residues. Only in the sampling stage, the conformer occupancy and optionally the microstates are recorded.
-
-
 
 
 
