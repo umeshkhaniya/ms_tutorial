@@ -10,7 +10,6 @@ Monte Carlo sampling in MCCE uses Metropolis–Hastings algorithm to evaluate th
 ## Input File:
 - head3.lst 
 - ms_out file
-- sum_crg.out
 
 ### ms_out file information
 One of the big challenges is recording all possible millions of microstates in readable format. MCCE algorithm has several approximations that are advantageous for the microstate analysis.  One is that conformers are premade so that we can label them for each microstate.  Also, that only a few residues are changed on each step so that we need to only record the conformers that have changes when a microstate is accepted. In the beginning of file, fixed conformers and free conformers ids are saved. In first line of each Monte Carlo run, microstates of free conformers residues are recorded and the following each line in each step have information of enthalpy (Kcal/Mol) of system, total number of times that microstate stuck before accepting the new state called count, and conformers ids of residues that are flipping.
@@ -18,7 +17,7 @@ One of the big challenges is recording all possible millions of microstates in r
 
 ## Script requirement:
   - ms_analysis.py: This script loads the input file.
+  - weighted_correlation.py: This is to find the weighted correlation coefficient
   - microstate_analysis.ipynb : This is for post processing of microstates.
-  - energy_calculation_ms_count.ipynb: This is for calculating Free energy and Entropy.
-  - pdb_write_ms.ipynb: This is to write microsates into pdb file for visualization purpose.
+  
   
